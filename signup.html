@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: white;
+}
+
+/* HEADER */
+
+header {
+    background: #1db954;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header h2 {
+    font-size: 25px;
+}
+
+nav button {
+    border: none;
+    background: transparent;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+nav button:hover {
+    background: #159447;
+    border-radius: 20px;
+}
+
+/* SECTIONS */
+
+.section {
+    padding: 40px 7%;
+    min-height: 70vh;
+}
+
+.hidden {
+    display: none;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.6)
+    ),
+    url("https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1400&q=80");
+
+    background-size: cover;
+    background-position: center;
+
+    padding: 100px 30px;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+#search {
+    width: 60%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+/* SONG GRID */
+
+.songs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 25px;
+}
+
+/* SONG CARD */
+
+.song-card {
+    background: #181818;
+    padding: 15px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.song-card:hover {
+    transform: translateY(-7px);
+    background: #242424;
+}
+
+.song-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.song-card h3 {
+    margin-top: 12px;
+}
+
+.song-card p {
+    color: #aaa;
+    margin: 6px 0;
+}
+
+.song-card button {
+    background: #1db954;
+    border: none;
+    padding: 9px 14px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    margin: 5px 3px;
+}
+
+.song-card button:hover {
+    background: #159447;
+}
+
+/* PLAYER */
+
+.player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #181818;
+    border-top: 1px solid #333;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    padding: 15px;
+}
+
+.player audio {
+    width: 400px;
+}
+
+.player button {
+    background: #e63946;
+    color: white;
+    border: none;
+    padding: 9px 15px;
+    border-radius: 20px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    background: #080808;
+    padding: 30px;
+    margin-bottom: 80px;
+    color: #aaa;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+
+    .songs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .songs {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    #search {
+        width: 90%;
+    }
+
+    .player {
+        flex-direction: column;
+    }
+
+    .player audio {
+        width: 90%;
+    }
+}
